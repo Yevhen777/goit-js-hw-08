@@ -20,24 +20,11 @@ gallery.insertAdjacentHTML('beforeend', allGalleryImage);
 
 let lightbox = new SimpleLightbox('.gallery__link');
 
-const galleryImageFunction = e => {
-  e.preventDefault();
-
-  if (e.target.tagName !== 'IMG') {
-    return;
+function onKeydown(e) {
+  if (e.code === 'Escape') {
+    window.removeEventListener('keydown', onKeydown);
   }
-  const instance = basicLightbox.create(
-    `<img src="${e.target.dataset.source}" width="1400" height="900">`,
-  );
+}
+window.addEventListener('keydown', onKeydown);
 
-  instance.show();
-
-  function onKeydown(e) {
-    if (e.code === 'Escape') {
-      instance.close();
-      window.removeEventListener('keydown', onKeydown);
-    }
-  }
-  window.addEventListener('keydown', onKeydown);
-};
 gallery.addEventListener('click', galleryImageFunction);
