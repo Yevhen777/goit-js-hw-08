@@ -18,4 +18,9 @@ const allGalleryImage = galleryItems
 
 gallery.insertAdjacentHTML('beforeend', allGalleryImage);
 
-let lightbox = new SimpleLightbox('.gallery__link');
+let lightbox = new SimpleLightbox('.gallery__link', {
+  docClose: true,
+  captionsData: 'alt',
+
+  captionDelay: 250,
+});
