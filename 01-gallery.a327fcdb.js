@@ -6,6 +6,6 @@ var t=arguments[3];function e(t){return(e="function"==typeof Symbol&&"symbol"==t
 },{}],"kz9M":[function(require,module,exports) {
 
 },{}],"TfQ5":[function(require,module,exports) {
-"use strict";var e=require("./gallery-items"),i=l(require("simplelightbox"));function l(e){return e&&e.__esModule?e:{default:e}}require("simplelightbox/dist/simple-lightbox.min.css");const n=document.querySelector(".gallery"),r=e.galleryItems.map(({preview:e,original:i,description:l})=>`<div class="gallery__item">\n    <a class="gallery__link" href="${i}">\n    <img class="gallery__image"\n      data-source="${i}"\n    src="${e}" alt="${l}" />\n        </a>\n    </div>`).join("");n.insertAdjacentHTML("beforeend",r);let t=new i.default(".gallery__link");function a(e){"Escape"===e.code&&window.removeEventListener("keydown",a)}window.addEventListener("keydown",a),n.addEventListener("click",galleryImageFunction);
+"use strict";var e=require("./gallery-items"),l=i(require("simplelightbox"));function i(e){return e&&e.__esModule?e:{default:e}}require("simplelightbox/dist/simple-lightbox.min.css");const r=document.querySelector(".gallery"),a=e.galleryItems.map(({preview:e,original:l,description:i})=>`<div class="gallery__item">\n    <a class="gallery__link" href="${l}">\n    <img class="gallery__image"\n      data-source="${l}"\n    src="${e}" alt="${i}" />\n        </a>\n    </div>`).join("");r.insertAdjacentHTML("beforeend",a);let s=new l.default(".gallery__link");
 },{"./gallery-items":"q5Rn","simplelightbox":"yx6k","simplelightbox/dist/simple-lightbox.min.css":"kz9M"}]},{},["TfQ5"], null)
-//# sourceMappingURL=/goit-js-hw-08/01-gallery.67b36b45.js.map
+//# sourceMappingURL=/goit-js-hw-08/01-gallery.a327fcdb.js.map
