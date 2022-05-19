@@ -19,12 +19,3 @@ const allGalleryImage = galleryItems
 gallery.insertAdjacentHTML('beforeend', allGalleryImage);
 
 let lightbox = new SimpleLightbox('.gallery__link');
-
-function onKeydown(e) {
-  if (e.code === 'Escape') {
-    window.removeEventListener('keydown', onKeydown);
-  }
-}
-window.addEventListener('keydown', onKeydown);
-
-gallery.addEventListener('click', galleryImageFunction);
