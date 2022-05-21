@@ -11,8 +11,14 @@ allForm.addEventListener('submit', onSubmit);
 allForm.addEventListener('input', throttle(onForm, 500));
 
 function onForm(e) {
-  formData[e.target.name] = e.target.value;
-  localStorage.setItem('feedback-form-state', JSON.stringify(formData));
+  let data;
+  if (JSON.parse(localStorage.getItem('feedback-form-state'))) {
+    data = JSON.parse(localStorage.getItem('feedback-form-state'));
+  } else {
+    data = formData;
+  }
+  data[e.target.name] = e.target.value;
+  localStorage.setItem('feedback-form-state', JSON.stringify(data));
 }
 
 function onSubmit(e) {
@@ -41,3 +47,17 @@ function loageTextarea() {
 }
 
 document.addEventListener('DOMContentLoaded', loageTextarea);
+
+// Доброго дня
+// У вас некоректний метод onForm
+// Має бути щось типу:
+// function onForm(e) {
+//   let data;
+//   if (JSON.parse(localStorage.getItem('feedback-form-state'))) {
+//     data = JSON.parse(localStorage.getItem('feedback-form-state'));
+//   } else {
+//     data = formData;
+//   }
+//   data[e.target.name] = e.target.value;
+//   localStorage.setItem('feedback-form-state', JSON.stringify(data));
+// }
